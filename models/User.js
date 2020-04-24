@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+const City = require('./City')
+
 
 const UserSchema = mongoose.Schema({
     name: {
@@ -17,7 +19,8 @@ const UserSchema = mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    }
+    },
+    city: String,
 })
 
 
