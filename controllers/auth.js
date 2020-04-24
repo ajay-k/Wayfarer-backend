@@ -58,27 +58,46 @@ const login = (req, res) => {
     if (!req.body.email || !req.body.password) {
         return res.status(400).json({ status: 400, message: 'Please enter your email and password' });
     }
-    db.User.findOne({email: req.body.email}, (err, foundUser) => {
+    db.User.findOne({ email: req.body.email }, (err, foundUser) => {
         if (err) return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again' });
 
-        if(!foundUser) {
+        if (!foundUser) {
             return res.status(400).json({ status: 400, message: 'Email or password is incorrect' });
         }
         bcrypt.compare(req.body.password, foundUser.password, (err, isMatch) => {
             if (err) return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again' });
 
-            if(isMatch){
+            if (isMatch) {
                 req.session.currentUser = { id: foundUser._id };
                 return res.status(200).json({ status: 200, message: 'Success', data: foundUser._id });
             } else {
                 return res.status(400).json({ status: 400, message: 'Email or password is incorrect' });
             }
-        })
-    })
-}
+        });
+    });
+};
+
+// POST Logout - Destroy Session
+const logout = (req, res) => {
+    if (!req.session.currentUser) return res.status(401).json({ status: 401, message: 'Unauthorized' });
+    req.session.destroy((err) => {
+        if (err) return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again' });
+        res.sendStatus(200);
+    });
+};
+
+const verify = (req, res) => {
+    if (!req.session.currentUser) return res.status(401).json({ status: 401, message: 'Unauthorized' });
+    res.status(200).json({
+        status: 200,
+        message: `Current User verified. User ID: ${req.session.currentUser.id}`
+    });
+};
 
 
 module.exports = {
     register,
     login,
+    verify,
+    logout
 }
