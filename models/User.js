@@ -3,11 +3,9 @@ const City = require('./City')
 
 
 const UserSchema = mongoose.Schema({
-    name: {
-        type: String,
-        required: [true, 'Name is required']
-    },
-    email: {
+    name: String,
+    
+    username: {
         type: String,
         required: [true, 'Email is required'],
         unique: true
