@@ -9,4 +9,5 @@ router.post('/login', ctrl.auth.login )
 router.get('/verify', ctrl.auth.verify)
 router.delete('/logout', ctrl.auth.logout)
 
+
 module.exports = router
