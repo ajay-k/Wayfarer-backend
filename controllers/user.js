@@ -12,12 +12,13 @@ const view = (req, res) => {
 
 const update = (req, res) => {
 
-    db.User.findOneAndUpdate(req.body.username, req.body, {new: true}, (err, updatedProfile) => {
+    db.User.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedProfile) => {
         if (err) {
             return res.status(400).json({ status: 400, error: 'Something went wrong' });
         }
         console.log(updatedProfile);
-        res.json(updatedProfile);
+        // res.json(updatedProfile);
+        return res.json(updatedProfile)
     })
 }
 
