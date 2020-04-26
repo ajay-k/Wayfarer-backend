@@ -3,8 +3,8 @@ const router = express.Router()
 const ctrl = require('../controllers')
 
 //PATH = /api/v1/user
-router.get('/view', ctrl.user.view)
-router.put('/update', ctrl.user.update)
+router.get('/view/:id', ctrl.user.view)
+router.put('/update/:id', ctrl.user.update)
 
 
 
