@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const City = require('./City')
+const Post = require('./Post')
 
 
 const UserSchema = mongoose.Schema({
@@ -19,6 +20,10 @@ const UserSchema = mongoose.Schema({
         default: Date.now
     },
     city: String,
+
+    posts: [Post.schema]
+
+    
 })
 
 
