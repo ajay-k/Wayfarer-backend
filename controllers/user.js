@@ -1,7 +1,7 @@
 const db = require('../models')
 
 const view = (req, res) => {
-    db.User.findOne({username : req.body.username}, (err, foundUser) => {
+    db.User.findById(req.params.id, (err, foundUser) => {
         if (err) return res.status(500).json({
             status: 500,
             message: 'Something went wrong. Please try again.'
