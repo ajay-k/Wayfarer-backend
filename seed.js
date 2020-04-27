@@ -77,21 +77,21 @@ const posts = [
 //     });
 // });
 
-// db.City.create(cities, (err, newCities) => {
-//         if(err) {
-//             console.log(err);
-//             process.exit();
-//         }
-//         console.log(`Successfully created ${newCities.length} cities.`);
-//         process.exit();
-//     });
-
-
-db.Post.create(posts, (err, newPosts) => {
-    if (err) {
-        console.log(err);
+db.City.create(cities, (err, newCities) => {
+        if(err) {
+            console.log(err);
+            process.exit();
+        }
+        console.log(`Successfully created ${newCities.length} cities.`);
         process.exit();
-    }
-    console.log(`Successfully created ${newPosts.length} posts.`);
-    process.exit();
-});    
+    });
+
+
+// db.Post.create(posts, (err, newPosts) => {
+//     if (err) {
+//         console.log(err);
+//         process.exit();
+//     }
+//     console.log(`Successfully created ${newPosts.length} posts.`);
+//     process.exit();
+// });    

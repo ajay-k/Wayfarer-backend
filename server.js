@@ -58,6 +58,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1/auth', routes.auth)
 app.use('/api/v1/user', routes.user)
+app.use('/api/v1/cities', routes.city)
 
 // Server --------------------------------- //
 app.listen(3001, () => {
