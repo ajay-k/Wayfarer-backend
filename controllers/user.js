@@ -42,6 +42,19 @@ const newPost = (req, res) => {
     })
 }
 
+const showPost = (req,res) => {
+    db.User.findById(req.params.id, (err, foundUser) => {
+        if(err){
+            return res.status(400).json({ status: 400, error: 'Something went wrong' });
+        }
+        const foundPost = foundUser.posts.id(req.params.postId);
+        if(!foundPost){
+            return res.status(400).json({ status: 400, error: 'Cannot find posts' });
+        }
+        return res.json(foundPost)
+    })
+}
+
 
 
 
@@ -49,4 +62,5 @@ module.exports = {
     view,
     update,
     newPost,
+    showPost,
 }
