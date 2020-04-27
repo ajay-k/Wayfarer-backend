@@ -1,13 +1,14 @@
 const mongoose = require('mongoose')
+const City = require('./City')
+const Post = require('./Post')
+
 
 const UserSchema = mongoose.Schema({
-    name: {
+    name: String,
+    
+    username: {
         type: String,
-        required: [true, 'Name is required']
-    },
-    email: {
-        type: String,
-        required: [true, 'Email is required'],
+        required: [true, 'Username is required'],
         unique: true
     },
     password: {
@@ -17,7 +18,12 @@ const UserSchema = mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    }
+    },
+    city: String,
+
+    posts: [Post.schema]
+
+    
 })
 
 

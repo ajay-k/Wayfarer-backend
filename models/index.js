@@ -12,4 +12,9 @@ mongoose.connect(dbUrl, {
    .then(() => console.log('MongoDB connected....'))
    .catch(err => console.log(`MongoDB connection error: ${err}`))
 
-module.exports = {User: require('./User')}
+module.exports = {
+    User: require('./User'),
+    City: require('./City'),
+    Post: require('./Post')
+
+}
