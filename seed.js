@@ -27,6 +27,12 @@ const cities = [
         description: 'Home of Big Ben',
         image: 'https://metro.co.uk/wp-content/uploads/2016/07/ad_212177409.jpg?quality=80&strip=all'
     },
+    {
+
+        name: 'Manchester',
+        description: 'big city in England',
+        image: 'https://metro.co.uk/wp-content/uploads/2016/07/ad_212177409.jpg?quality=80&strip=all'
+    },
 ];
 
 
