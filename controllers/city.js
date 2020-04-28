@@ -55,18 +55,20 @@ const newAddPost = (req, res) => {
                 if (err) {
                     return res.status(400).json({ status: 400, error: 'Something is wrong' });
                 }
-                res.json(savedPost)
+                
+            })
+
+            db.User.findById(req.params.userId, (err, foundUser) => {
+                foundUser.posts.push(newPost);
+                foundUser.save((err, savedPost) => {
+                    if (err) {
+                        return res.status(400).json({ status: 400, error: 'Something is wrong' });
+                    }
+                    res.json(savedPost)
+                })
             })
         })
-        db.User.findById(req.params.userId, (err, foundUser) => {
-            foundUser.posts.push(newPost);
-            foundUser.save((err, savedPost) => {
-                if (err) {
-                    return res.status(400).json({ status: 400, error: 'Something is wrong' });
-                }
-                res.json(savedPost)
-            })
-        })
+  
     })
 }
 
