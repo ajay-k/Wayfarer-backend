@@ -41,7 +41,7 @@ const addPost = (req, res) => {
 }
 
 
-// const addPost = (req, res) => {
+// const newAddPost = (req, res) => {
 //     db.Post.create(req.body, (err, newPost) => {
 //         if (err) {
 //             return res.status(400).json({ status: 400, error: 'Something went wrong' });
