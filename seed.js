@@ -3,37 +3,55 @@ const mongoose = require('mongoose')
 const db = require('./models')
 
 
+// const cities = [
+//     {
+//         name: 'San Francisco',
+//         description: 'City by the Bay',
+//         image: 'https://qtxasset.com/2016-05/sanfrancisco1.jpg?d03luT2_JZoz7SlHPz83.SRgx2rFOaA5'
+//     },
+//     {
+
+//         name: 'New York',
+//         description: 'The Big Apple',
+//         image: 'https://pix10.agoda.net/geo/city/318/1_318_02.jpg?s=1920x822'
+//     },
+//     {
+
+//         name: 'Paris',
+//         description: 'City of Romance',
+//         image: 'https://www.riotgames.com/darkroom/1440/b2b587d91d3c5d2922953ac62fbb2cb8:dfd0d5c2d07f981fb8cda29623b5e54e/paris.jpg'
+//     },
+//     {
+
+//         name: 'London',
+//         description: 'Home of Big Ben',
+//         image: 'https://metro.co.uk/wp-content/uploads/2016/07/ad_212177409.jpg?quality=80&strip=all'
+//     },
+//     {
+
+//         name: 'Manchester',
+//         description: 'big city in England',
+//         image: 'https://metro.co.uk/wp-content/uploads/2016/07/ad_212177409.jpg?quality=80&strip=all'
+//     },
+// ];
+
+
 const cities = [
     {
-        name: 'San Francisco',
-        description: 'City by the Bay',
-        image: 'https://qtxasset.com/2016-05/sanfrancisco1.jpg?d03luT2_JZoz7SlHPz83.SRgx2rFOaA5'
+        name: 'Sydney',
+        description: 'The land down under',
+        image: 'https://images.unsplash.com/photo-1524293581917-878a6d017c71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
     },
     {
 
-        name: 'New York',
-        description: 'The Big Apple',
-        image: 'https://pix10.agoda.net/geo/city/318/1_318_02.jpg?s=1920x822'
+        name: 'Seatle',
+        description: 'Home of the first Starbucks',
+        image: 'https://images.unsplash.com/photo-1438401171849-74ac270044ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2092&q=80'
     },
-    {
-
-        name: 'Paris',
-        description: 'City of Romance',
-        image: 'https://www.riotgames.com/darkroom/1440/b2b587d91d3c5d2922953ac62fbb2cb8:dfd0d5c2d07f981fb8cda29623b5e54e/paris.jpg'
-    },
-    {
-
-        name: 'London',
-        description: 'Home of Big Ben',
-        image: 'https://metro.co.uk/wp-content/uploads/2016/07/ad_212177409.jpg?quality=80&strip=all'
-    },
-    {
-
-        name: 'Manchester',
-        description: 'big city in England',
-        image: 'https://metro.co.uk/wp-content/uploads/2016/07/ad_212177409.jpg?quality=80&strip=all'
-    },
+ 
 ];
+
+
 
 
 
